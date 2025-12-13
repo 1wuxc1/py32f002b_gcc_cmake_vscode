@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    
+    "configurations": [
+        {
+            "name": "Cortex Debug (PY32F002B)",
+            "cwd": "${workspaceFolder}",
+            "executable": "D:/my_work_space/project/PY/py32f002b_demo/build/Debug/py32f002b_demo.elf",
+             "showDevDebugOutput": "raw",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "openocd",
+            "serverpath": "D:\\my_work_space\\sdk\\PY32F002B_Firmware-master\\PY32F002B_Firmware-master\\Packs\\GCC\\openocd-0.12.0\\openocd-0.12.0\\bin\\openocd.exe",
+            "searchDir": [
+                "D:\\my_work_space\\sdk\\PY32F002B_Firmware-master\\PY32F002B_Firmware-master\\Packs\\GCC\\openocd-0.12.0\\openocd-0.12.0\\scripts"
+            ],
+            "configFiles": [
+                "interface/cmsis-dap-v1.cfg",
+                "target/py32f002b.cfg"
+            ],
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 1
+            },
+            "svdFile": ".pack/Keil/STM32G4xx_DFP_Revised.1.1.0/CMSIS/SVD/STM32G431xx.svd"
+        }
+    ]
+}
