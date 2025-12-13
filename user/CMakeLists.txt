@@ -3,6 +3,7 @@
 # 递归搜索目录及子目录下的所有.c文件
 file(GLOB_RECURSE USER_SOURCES 
     ${CMAKE_CURRENT_SOURCE_DIR}/*.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
 )
 
 # 添加源文件到目标
