@@ -44,7 +44,7 @@
 #define configUSE_TIME_SLICING                     1
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION    0
 #define configUSE_TICKLESS_IDLE                    0
-#define configMAX_PRIORITIES                       5U
+#define configMAX_PRIORITIES                       2U
 #define configMINIMAL_STACK_SIZE                   64U
 #define configMAX_TASK_NAME_LEN                    4U
 #define configTICK_TYPE_WIDTH_IN_BITS              TICK_TYPE_WIDTH_32_BITS
@@ -116,7 +116,7 @@
 #define configUSE_APPLICATION_TASK_TAG         0
 #define INCLUDE_vTaskPrioritySet               0
 #define INCLUDE_uxTaskPriorityGet              0
-#define INCLUDE_vTaskDelete                    0
+#define INCLUDE_vTaskDelete                    1
 #define INCLUDE_vTaskSuspend                   1
 #define INCLUDE_xResumeFromISR                 1
 #define INCLUDE_vTaskDelayUntil                1

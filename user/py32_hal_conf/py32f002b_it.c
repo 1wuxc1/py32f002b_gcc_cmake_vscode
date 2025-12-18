@@ -31,6 +31,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "py32f002b_it.h"
+extern TIM_HandleTypeDef htim14;
 
 /* Private includes ----------------------------------------------------------*/
 /* Private typedef -----------------------------------------------------------*/
@@ -111,6 +112,12 @@ void SysTick_Handler(void)
 // {
 //   HAL_ADC_IRQHandler(&hadc);
 // }
+void TIM14_IRQHandler(void)
+{
+  // 调用 HAL 库的统一处理函数
+  // 这个函数内部会自动清除标志位，并调用 HAL_TIM_PeriodElapsedCallback
+  HAL_TIM_IRQHandler(&htim14);
+}
 
 
 

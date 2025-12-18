@@ -558,3 +558,23 @@ void OLED_DrawPixel(uint8_t x, uint8_t y, uint8_t color)
 		ssd1306_buffer[index] &= ~(1 << bit_offset); // 黑色-清位
 	}
 }
+// 刷新整个屏幕，把缓冲区写入 SSD1306
+void OLED_Update(void)
+{
+    // SSD1306 高度 64 → 共 8 页，每页 8 行
+    for (uint8_t page = 0; page < (SSD1306_HEIGHT / 8); page++)
+    {
+        // 设置页地址
+        OLED_WR_Byte(0xB0 + page, 0);   // 设置页起始地址 (0xB0~0xB7)
+        OLED_WR_Byte(0x00, 0);          // 设置列低位地址
+        OLED_WR_Byte(0x10, 0);          // 设置列高位地址
+
+        // 写入一整页的数据（128字节）
+        for (uint8_t col = 0; col < SSD1306_WIDTH; col++)
+        {
+            OLED_WR_Byte(ssd1306_buffer[page * SSD1306_WIDTH + col], 1);
+        }
+    }
+}
+
+

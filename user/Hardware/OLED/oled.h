@@ -85,6 +85,7 @@ void IIC_Stop();
 void Write_IIC_Command(unsigned char IIC_Command);
 void Write_IIC_Data(unsigned char IIC_Data);
 void OLED_DrawPixel(uint8_t x, uint8_t y, uint8_t color);
+void OLED_Update(void);
 void OLED_UpdateScreen(void);
 void OLED_ShowFloat(u8 x, u8 y, float num, u8 size2);
 // void Write_IIC_Byte(unsigned char IIC_Byte);

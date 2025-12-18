@@ -30,11 +30,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "hal_i2c.h"
-#include "oled.h"
-#include "FreeRTOS.h"
-#include "task.h"
-#include "hal_ltim.h"
+#include "task_init.h"
 
 void Delay(uint32_t mdelay)
 {
@@ -70,24 +66,22 @@ void Task1(void *pvParameters)
  * @brief  Main program.
  * @retval int
  */
-extern "C" {
-int main(void)
+extern "C"
 {
-  SystemInit();
-  Delay(2000);
-
-  HAL_Init();  // 初始化 HAL 和 SysTick
-  I2cInit();   // 初始化 I2C
-  OLED_Init(); // 初始化 OLED
-  LtimInit();
-  xTaskCreate(Task1, "Task1", 128, NULL, 2, NULL);
-
-  vTaskStartScheduler();
-
-  while (1)
+  int main(void)
   {
+    SystemInit();
+    Delay(2000);
+
+    HAL_Init(); // 初始化 HAL 和 SysTick
+    LtimInit();
+
+    task_init task_init;
+    
+    while (1)
+    {
+    }
   }
-}
 }
 
 /**

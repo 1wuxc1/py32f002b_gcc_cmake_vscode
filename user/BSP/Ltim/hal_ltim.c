@@ -104,3 +104,4 @@ void vAssertCalled(const char *pcFile, uint32_t ulLine)
     while (1)
         ;
 }
+
